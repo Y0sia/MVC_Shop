@@ -3069,3 +3069,6 @@ ul.tag-men {
 .item_old_price {
 	text-decoration: line-through;
 }
+.quantity {
+	margin-top: 20px;
+}

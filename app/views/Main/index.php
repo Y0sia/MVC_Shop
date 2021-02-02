@@ -56,7 +56,11 @@
                         <div class="product-bottom">
                             <h3><?=$hit->title?></h3>
                             <p>Explore Now</p>
-                            <h4><a class="item_add" href="product/<?=$hit->alias?>"><i></i></a> <span class=" item_price"><?=$curr['symbol_left'];?><?=($hit->price * $curr['value'])?><?=$curr['symbol_right'];?><?php if($hit->old_price != 0): ?></span> <span class=" item_price item_old_price"><?=$curr['symbol_left'];?><?=($hit->old_price * $curr['value'])?><?=$curr['symbol_right'];?></span><?php endif; ?></h4>
+                            <h4><a class="item_add add-to-cart-link" href="cart/add?id=<?=$hit->id?>"><i></i></a> <span class=" item_price"><?=$curr['symbol_left'];?><?=($hit->price * $curr['value'])?><?=$curr['symbol_right'];?></span>
+                                <?php if($hit->old_price != 0): ?>
+                                    <span class=" item_price item_old_price"><?=$curr['symbol_left'];?><?=($hit->old_price * $curr['value'])?><?=$curr['symbol_right'];?></span>
+                                <?php endif; ?>
+                            </h4>
                         </div>
                         <?php if($hit->old_price != 0): ?>
                         <div class="srch">

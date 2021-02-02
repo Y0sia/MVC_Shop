@@ -11,14 +11,16 @@ class View {
     public $view;
     public $prefix;
     public $layout;
+    public $favIcon;
     public $data = [];
     public $meta = [];
 
-    public function __construct($route, $layout = '', $view = '', $meta) {
+    public function __construct($route, $layout = '', $view = '', $meta, $favIcon = 'favicon') {
         $this->route = $route;
         $this->controller = $route['controller'];
         $this->model = $route['controller'];
         $this->view = $view;
+        $this->favIcon = $favIcon;
         $this->prefix = $route['prefix'];
         $this->meta = $meta;
         if($layout === false) {
@@ -50,6 +52,11 @@ class View {
         $output = '<title>' . $this->meta['title'] . '</title>' . PHP_EOL;
         $output .= '<meta name="description" content="' . $this->meta['desc'] . '"' . PHP_EOL;
         $output .= '<meta name="keywords" content="' . $this->meta['keywords'] . '"' . PHP_EOL;
+        return $output;
+    }
+
+    public function getFavIcon() {
+        $output = '<link rel="shortcut icon" href="public/images/' . $this->favIcon . '.ico" />';
         return $output;
     }
 }
