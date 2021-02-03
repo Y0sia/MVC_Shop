@@ -46,17 +46,17 @@
         <?php $count = 0; ?>
         <div class="product-top">
             <?php foreach($hits as $hit): ?>
-                <?php $count++; ?>
-            <?php if($count % 4 == 0 && $count != 0): ?>
+            <?php if($count % 4 == 0 || $count == 0): ?>
             <div class="product-one">
                 <?php endif; ?>
+                <?php $count++; ?>
                 <div class="col-md-3 product-left">
                     <div class="product-main simpleCart_shelfItem">
                         <a href="product/<?=$hit->alias?>" class="mask"><img class="img-responsive zoom-img" src="public/images/<?=$hit->img?>" alt="" /></a>
                         <div class="product-bottom">
                             <h3><?=$hit->title?></h3>
                             <p>Explore Now</p>
-                            <h4><a class="item_add add-to-cart-link" href="cart/add?id=<?=$hit->id?>"><i></i></a> <span class=" item_price"><?=$curr['symbol_left'];?><?=($hit->price * $curr['value'])?><?=$curr['symbol_right'];?></span>
+                            <h4><a data-id="<?=$hit->id?>" class="item_add add-to-cart-link" href="cart/add?id=<?=$hit->id?>"><i></i></a> <span class=" item_price"><?=$curr['symbol_left'];?><?=($hit->price * $curr['value'])?><?=$curr['symbol_right'];?></span>
                                 <?php if($hit->old_price != 0): ?>
                                     <span class=" item_price item_old_price"><?=$curr['symbol_left'];?><?=($hit->old_price * $curr['value'])?><?=$curr['symbol_right'];?></span>
                                 <?php endif; ?>
