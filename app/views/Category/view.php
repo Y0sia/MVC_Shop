@@ -3,8 +3,7 @@
     <div class="container">
         <div class="breadcrumbs-main">
             <ol class="breadcrumb">
-                <li><a href="<?=PATH;?>">Главная</a></li>
-                <li>Категория</li>
+                <?=$breadcrumbs;?>
             </ol>
         </div>
     </div>
@@ -46,6 +45,12 @@
                             </div>
                         <?php endif; ?>
                     <?php endforeach; ?>
+                    <div class="text-center">
+                        <p>(<?=count($products)?> товара(ов) из <?=$total;?>)</p>
+                        <?php if($pagination->countPages > 1): ?>
+                            <?=$pagination;?>
+                        <?php endif; ?>
+                    </div>
                 <?php else: ?>
                     <h3>Товар отсутсвует</h3>
                 <?php endif; ?>
