@@ -30,6 +30,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <?php new \app\widgets\currency\Currency(); ?>
                         </select>
                     </div>
+                    <div class="btn-group">
+                        <a class="dropdown-toggle" data-toggle="dropdown">Account <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <?php if(!empty($_SESSION['user'])): ?>
+                                <li><a href="#">Добро пожаловать, <?=h($_SESSION['user']['name']);?></a></li>
+                                <li><a href="user/logout">Выход</a></li>
+                            <?php else: ?>
+                                <li><a href="user/login">Вход</a></li>
+                                <li><a href="user/signup">Регистрация</a></li>
+                            <?php endif; ?>
+                        </ul>
+                    </div>
                     <div class="clearfix"></div>
                 </div>
             </div>
@@ -88,6 +100,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </div>
 </div>
 <!--bottom-header-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <?php if(isset($_SESSION['error'])): ?>
+                <div class="alert alert-danger">
+                    <?php echo $_SESSION['error']; unset($_SESSION['error']); ?>
+                </div>
+            <?php endif; ?>
+            <?php if(isset($_SESSION['success'])): ?>
+                <div class="alert alert-success">
+                    <?php echo $_SESSION['success']; unset($_SESSION['success']); ?>
+                </div>
+            <?php endif; ?>
+        </div>
+    </div>
+</div>
 <?=$content?>
 <!--footer-starts-->
 <div class="footer">
@@ -138,6 +166,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <script src="public/js/jquery-1.11.0.min.js"></script>
 <script src="public/js/bootstrap.min.js"></script>
+<script src="public/js/validator.min.js"></script>
 <script src="public/js/typeahead.bundle.js"></script>
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <script src="public/js/jquery.easydropdown.js"></script>
