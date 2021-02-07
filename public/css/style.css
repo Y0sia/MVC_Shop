@@ -3072,7 +3072,8 @@ h3.ghj {
 .quantity {
 	margin-top: 20px;
 }
-#cart table img {
+#cart table img,
+.cart table img{
 	height: 50px;
 }
 .del-item {
