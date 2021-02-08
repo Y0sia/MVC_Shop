@@ -62,7 +62,7 @@
                                 <ul>
                                     <li>Color
                                         <select>
-                                            <option>Выберать цвет</option>
+                                            <option>Выбрать цвет</option>
                                             <?php foreach($mods as $mod): ?>
                                                 <option data-title="<?=$mod->title;?>" data-price="<?=$mod->price * $curr['value'];?>" value="<?=$mod->id;?>"><?=$mod->title;?></option>
                                             <?php endforeach; ?>

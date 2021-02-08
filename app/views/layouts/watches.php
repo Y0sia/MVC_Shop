@@ -154,7 +154,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         </div>
     </div>
 </div>
-</body>
+<div class="preloader"><img src="public/images/ring.svg" alt=""></div>
 
 <?php $curr = \shop\App::$app->getProperty('currency'); ?>
 <script>
@@ -177,5 +177,5 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script src="public/js/random-scripts.js"></script>
 <script src="public/js/main.js"></script>
 
-
+</body>
 </html>
