@@ -7,6 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
     <?=$this->getMeta(); ?>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <?=$this->getFavIcon(); ?>

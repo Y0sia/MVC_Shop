@@ -55,8 +55,8 @@ class View {
         return $output;
     }
 
-    public function getFavIcon() {
-        $output = '<link rel="shortcut icon" href="public/images/' . $this->favIcon . '.ico" />';
+    public function getFavIcon($admin = false) {
+            $output = '<link rel="shortcut icon" href="public/images/' . $this->favIcon . '.ico" />';
         return $output;
     }
 }
